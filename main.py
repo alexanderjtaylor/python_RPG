@@ -39,14 +39,18 @@ random_opponent_name = random_opponent["Name"]
 def user_hercules():
     global opponent_hp
     user_input = input("Select an attack for Hercules! Punch, Kick, Jumping Punch, Grapple: ")
-    if user_input == "Punch" or "punch" or "Kick" or "kick" or "Jumping Punch" or "jumping punch" or "Grapple" or "grapple":
+    for x in Hercules["Attack Moves"]:
+        # if user_input == "Punch" or "punch" or "Kick" or "kick" or "Jumping Punch" or "jumping punch" or "Grapple" or "grapple":
         hit_or_miss = random.choice(attack_hit_or_miss)
         if hit_or_miss == "ATTACK HIT!":
             opponent_hp -= 10
+        print(f"Hercules attacked with {user_input}. {hit_or_miss}")
+        print(f"Opponent HP: {opponent_hp}")
+        break
     else:
         print("Invalid input: Skip a turn")
-    print(f"Hercules attacked with {user_input}. {hit_or_miss}")
-    print(f"Opponent HP: {opponent_hp}") 
+    # print(f"Hercules attacked with {user_input}. {hit_or_miss}")
+    # print(f"Opponent HP: {opponent_hp}") 
 
 # user_hercules()
 
